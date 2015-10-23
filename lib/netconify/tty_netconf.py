@@ -160,7 +160,7 @@ class tty_netconf(object):
         """
         if not cmd.startswith('<'):
             cmd = '<{0}/>'.format(cmd)
-        self._tty.rawwrite('<rpc>{0}</rpc>'.format(cmd))
+        self._tty.write('<rpc>{0}</rpc>'.format(cmd))
         rsp = self._receive()
         return rsp[0]  # return first child after the <rpc-reply>
 
